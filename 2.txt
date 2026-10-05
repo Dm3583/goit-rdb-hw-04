@@ -1,0 +1,16 @@
+USE librarymanagement;
+
+INSERT INTO authors (author_id, author_name)
+VALUES (1, 'Arthur Conan Doyle');
+
+INSERT INTO genres (genre_id, genre_name)
+VALUES (1, 'Detective');
+
+INSERT INTO books (book_id, title, publication_year, author_id, genre_id)
+VALUES (1, 'The Hound of the Baskervilles', 1902, 1, 1);
+
+INSERT INTO users (user_id, username, email)
+VALUES (1, 'John Doe', 'johndoe.test@mail.com');
+
+INSERT INTO borrowed_books (borrow_id, book_id, user_id, borrow_date, return_date)
+VALUES (1, 1, 1, '2026-10-01', '2026-10-15');
