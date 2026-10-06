@@ -23,7 +23,7 @@ USE LibraryManagement;
 
 ### 1.2. Створення структури таблиць
 
-Створення таблиць `authors`, `genres`, `books`, `users`, `borrowed_books` із визначенням `PRIMARY KEY` та `FOREIGN KEY`[cite: 2].
+Створення таблиць `authors`, `genres`, `books`, `users`, `borrowed_books` із визначенням `PRIMARY KEY` та `FOREIGN KEY`.
 
 ```sql
 USE LibraryManagement;
@@ -73,7 +73,7 @@ CREATE TABLE borrowed_books (
 
 ## 📌 Завдання 2. Наповнення таблиць тестовими даними (DML)
 
-Додавання тестових записів у кожну таблицю з дотриманням зв'язків між сутностями[cite: 3].
+Додавання тестових записів у кожну таблицю з дотриманням зв'язків між сутностями.
 
 ### 2.1. Вставка записів у таблиці
 
@@ -164,7 +164,7 @@ SELECT * FROM librarymanagement.borrowed_books;
 
 ## 📌 Завдання 3. Об'єднання всіх таблиць бази замовлень (INNER JOIN)
 
-Об'єднання 8 таблиць даних (`orders`, `customers`, `employees`, `shippers`, `order_details`, `products`, `categories`, `suppliers`) за спільними первинними та зовнішніми ключами[cite: 9, 10].
+Об'єднання 8 таблиць даних (`orders`, `customers`, `employees`, `shippers`, `order_details`, `products`, `categories`, `suppliers`) за спільними первинними та зовнішніми ключами.
 
 ### 3.1. Вибірка всіх стовпчиків (`SELECT *`)
 
@@ -188,9 +188,9 @@ FROM orders o
 
 ---
 
-### 3.2. Вибірка окремих атрибутів із зазначенням аліасів
+### АБО
 
-Проєкція ключових полів для усунення дублювання назв стовпчиків між з'єднаними таблицями[cite: 10].
+Варіант, більш подібний до реального коду - проєкція ключових полів для усунення дублювання назв стовпчиків між з'єднаними таблицями.
 
 ```sql
 USE test_db;
