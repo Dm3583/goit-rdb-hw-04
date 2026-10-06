@@ -1,0 +1,48 @@
+3. Перейдіть до бази даних, з якою працювали у темі 3. Напишіть запит за допомогою операторів FROM та INNER JOIN, що об’єднує всі таблиці даних, які ми завантажили з файлів: order_details, orders, customers, products, categories, employees, shippers, suppliers. Для цього ви маєте знайти спільні ключі.
+
+USE test_db;
+
+SELECT *
+FROM orders o
+    INNER JOIN customers c ON c.id = o.customer_id
+    INNER JOIN employees e ON e.employee_id = o.employee_id
+    INNER JOIN shippers s ON s.id = o.shipper_id
+    INNER JOIN order_details od ON od.order_id = o.id
+    INNER JOIN products p ON p.id = od.product_id
+    INNER JOIN categories cat ON cat.id = p.category_id
+    INNER JOIN suppliers sup ON sup.id = p.supplier_id;
+
+або
+
+USE test_db;
+
+SELECT 
+    o.id AS order_id,
+    o.date AS order_date,
+    c.id AS customer_id,
+    c.name AS customer_name,
+    c.contact AS customer_contact,
+    c.city AS customer_city,
+    c.country AS customer_country,
+    e.employee_id,
+    CONCAT(e.first_name, ' ', e.last_name) AS employee_name,
+    s.id AS shipper_id,
+    s.name AS shipper_name,
+    p.id AS product_id,
+    p.name AS product_name,
+    cat.id AS category_id,
+    cat.name AS category_name,
+    sup.id AS supplier_id,
+    sup.name AS supplier_name,
+    od.quantity,
+    p.id AS product_id,
+    p.unit AS product_unit,
+    p.price AS unit_price
+FROM orders o
+    INNER JOIN customers c ON c.id = o.customer_id
+    INNER JOIN employees e ON e.employee_id = o.employee_id
+    INNER JOIN shippers s ON s.id = o.shipper_id
+    INNER JOIN order_details od ON od.order_id = o.id
+    INNER JOIN products p ON p.id = od.product_id
+    INNER JOIN categories cat ON cat.id = p.category_id
+    INNER JOIN suppliers sup ON sup.id = p.supplier_id;
